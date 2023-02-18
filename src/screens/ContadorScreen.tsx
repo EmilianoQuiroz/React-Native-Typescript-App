@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Touchable, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 
 export const ContadorScreen = () => {
 
-  const [contador, setContador] = useState(10);
+  const [contador, setContador] = useState(0);
 
   return (
     <View style={{
@@ -19,10 +19,18 @@ export const ContadorScreen = () => {
             Contador { contador }
         </Text>
 
-        <Button 
-          title="Click"
-          onPress={ () => setContador(contador + 1) }
-        />
+        <TouchableOpacity
+        onPress={ () => setContador(contador + 1) }
+        >
+          <View style={{
+            backgroundColor: 'red',
+            borderRadius:100
+          }}>
+            <Text>
+              +1
+            </Text>
+          </View>
+        </TouchableOpacity>
 
     </View>
   )
