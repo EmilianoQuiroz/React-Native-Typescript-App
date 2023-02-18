@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useState } from 'react';
+import { Fab } from '../components/Fab';
 
 export const ContadorScreen = () => {
 
@@ -12,20 +13,12 @@ export const ContadorScreen = () => {
             Contador { contador }
         </Text>
 
-        {/* Boton de suma */}
-        <TouchableOpacity
-        style= {styles.fabLocationBR}
-        onPress={ () => setContador(contador + 1) }
-        >
-          <View style={styles.fab}>
-            <Text style={styles.fabText}>
-              +1
-            </Text>
-          </View>
-        </TouchableOpacity>
+        <Fab 
+           title= "+1"
+        />
 
         {/* Boton de resta */}
-        <TouchableOpacity
+        {/* <TouchableOpacity
         style= {styles.fabLocationBL}
         onPress={ () => setContador(contador - 1) }
         >
@@ -34,7 +27,7 @@ export const ContadorScreen = () => {
               -1
             </Text>
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
     </View>
   )
 }
@@ -49,32 +42,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 40,
     top: -25 
-  },
-  /* Locacion del boton flotante al borde inferior derecho */
-  fabLocationBR: {
-    position: 'absolute',
-    bottom: 25,
-    right:25
-  },
-  /* Locacion de Boton Flotante de resta al borde inferior izquierdo */
-  fabLocationBL: {
-    position: 'absolute',
-    bottom: 25,
-    left:25,
-  },
-  /* Flutting Action Bottom: Boton flotante */
-  fab: {
-    backgroundColor: '#5856D6',
-    width: 60,
-    height: 60,
-    borderRadius:100,
-    justifyContent: 'center'
-  },
-  /* Estilos del texto del boton flotante */
-  fabText: {
-    color: 'white',
-    fontSize: 25,
-    fontWeight: 'bold',
-    alignSelf: 'center'
   }
 })
