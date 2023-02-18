@@ -13,21 +13,19 @@ export const ContadorScreen = () => {
             Contador { contador }
         </Text>
 
+        {/* Boton de suma */}
         <Fab 
            title= "+1"
+           onPress={ () => setContador(contador +  1)}
         />
 
         {/* Boton de resta */}
-        {/* <TouchableOpacity
-        style= {styles.fabLocationBL}
-        onPress={ () => setContador(contador - 1) }
-        >
-          <View style={styles.fab}>
-            <Text style={styles.fabText}>
-              -1
-            </Text>
-          </View>
-        </TouchableOpacity> */}
+        <Fab 
+           title= "-1"
+           position='bl'
+           onPress={ () => setContador(contador -  1)}
+        />
+
     </View>
   )
 }
